@@ -5,9 +5,20 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Ethan Liu | Mechanical Engineering",
+  metadataBase: new URL("https://liuetha.github.io"),
+  title: {
+    default: "Ethan Liu | Mechanical Engineering",
+    template: "%s | Ethan Liu",
+  },
   description:
-    "Mechanical Engineering student at the University of Toronto working in CFD, aerodynamics, aerospace, and mechanical design.",
+    "Ethan Liu is a mechanical engineering student at the University of Toronto working on Computational Fluid Dynamics (CFD) research, aerodynamics, and mechanical design.",
+  openGraph: {
+    title: "Ethan Liu | Mechanical Engineering",
+    description:
+      "Computational Fluid Dynamics (CFD) research, solar car aerodynamics, aircraft stability, and rocket hardware by Ethan Liu.",
+    type: "website",
+    url: "https://liuetha.github.io",
+  },
 };
 
 export default function RootLayout({
@@ -16,8 +27,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en-CA">
       <body>
+        <a className="skip-link" href="#main-content">
+          Skip to content
+        </a>
         <Navbar />
         {children}
         <Footer />

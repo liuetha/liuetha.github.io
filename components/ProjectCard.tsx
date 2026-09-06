@@ -1,39 +1,21 @@
 import Link from "next/link";
+import ProjectImageSlot from "@/components/ProjectImageSlot";
 import type { Project } from "@/data/projects";
 
-type ProjectCardProps = {
-  project: Project;
-};
-
-export default function ProjectCard({ project }: ProjectCardProps) {
+export default function ProjectCard({ project }: { project: Project }) {
   return (
     <Link
       href={`/projects/${project.slug}/`}
-      className="project-card"
+      className="project-link"
+      data-project={project.slug}
+      aria-labelledby={`${project.slug}-title`}
+      aria-describedby={`${project.slug}-summary`}
     >
-      <div className="project-card-top">
-        <span className="project-number">{project.number}</span>
-        <span className="project-arrow">↗</span>
-      </div>
-
-      <div>
-        <p className="project-organization">
-          {project.organization}
-        </p>
-
-        <h3>{project.title}</h3>
-
-        <p className="project-summary">
-          {project.summary}
-        </p>
-      </div>
-
-      <div className="tag-list">
-        {project.tags.map((tag) => (
-          <span className="tag" key={tag}>
-            {tag}
-          </span>
-        ))}
+      <ProjectImageSlot image={project.coverImage} label="Cover photo" compact placeholder />
+      <div className="project-copy">
+        <p className="project-organisation">{project.organization}</p>
+        <h3 id={`${project.slug}-title`}>{project.shortTitle}</h3>
+        <p id={`${project.slug}-summary`}>{project.summary}</p>
       </div>
     </Link>
   );

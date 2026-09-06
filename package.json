@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "spotify:authorize": "node scripts/spotify-authorize.mjs",
+    "spotify:update": "node scripts/update-spotify.mjs"
   },
   "dependencies": {
     "next": "16.3.4",

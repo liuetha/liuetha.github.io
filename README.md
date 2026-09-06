@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ethan Liu’s portfolio
 
-## Getting Started
+A simple Next.js portfolio with a short introduction, four project links, individual project pages, and an optional Spotify-powered recent-listens section.
 
-First, run the development server:
+## Run locally
+
+Use Node.js 22, matching the included GitHub Pages workflow.
 
 ```bash
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Edit the content
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `app/page.tsx`: opening sentence and about section.
+- `data/projects.ts`: project summaries, contributions, and detail-page copy.
+- `components/Footer.tsx`: email address and LinkedIn.
+- `components/Music.tsx`: homepage music section.
+- `SPOTIFY_SETUP.md`: private Spotify/GitHub Actions setup.
+- `app/globals.css`: layout, typography, and colours.
 
-## Learn More
+## Build
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run build
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The static website is generated in `out/`. The existing GitHub Pages workflow builds and deploys it when changes are pushed to `main`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+If copying this version over the previous project, remove the old `components/ProjectReel.tsx` and default `app/favicon.ico`. They are no longer used. Keep your repository’s `.git` directory.
 
-## Deploy on Vercel
+The design uses system fonts and does not require external fonts, image services, or animation packages.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Spotify recent listens
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The Music section can update automatically from Spotify without putting private credentials in the website. Follow `SPOTIFY_SETUP.md`.

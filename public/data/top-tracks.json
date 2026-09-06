@@ -1,0 +1,42 @@
+{
+  "generatedAt": "2026-09-06T01:58:40.784Z",
+  "timeRange": "short_term",
+  "tracks": [
+    {
+      "id": "3luic5gdP19rj3dZVNXFTE",
+      "rank": 1,
+      "title": "Snow White",
+      "artist": "Laufey",
+      "album": "A Matter of Time",
+      "image": "https://i.scdn.co/image/ab67616d0000b273dd5789ac02546396dc8aaf58",
+      "url": "https://open.spotify.com/track/3luic5gdP19rj3dZVNXFTE"
+    },
+    {
+      "id": "2qiDXgq5fL1FetkhX5xi9L",
+      "rank": 2,
+      "title": "Regent's Park",
+      "artist": "Bruno Major",
+      "album": "To Let A Good Thing Die",
+      "image": "https://i.scdn.co/image/ab67616d0000b273e321a69d7454d9365c667187",
+      "url": "https://open.spotify.com/track/2qiDXgq5fL1FetkhX5xi9L"
+    },
+    {
+      "id": "5f7UJCMrA1VRLvbPrq1h0G",
+      "rank": 3,
+      "title": "Put On A Smile",
+      "artist": "Bruno Mars, Anderson .Paak, Silk Sonic",
+      "album": "An Evening With Silk Sonic",
+      "image": "https://i.scdn.co/image/ab67616d0000b2731756c2022529aacfa98d2eb8",
+      "url": "https://open.spotify.com/track/5f7UJCMrA1VRLvbPrq1h0G"
+    },
+    {
+      "id": "5swBXhkDFezfrkVyeHuoo0",
+      "rank": 4,
+      "title": "I Want You Back - Live On The Ed Sullivan Show, December 14, 1969",
+      "artist": "The Jackson 5",
+      "album": "I Want You Back (Live On The Ed Sullivan Show, December 14, 1969)",
+      "image": "https://i.scdn.co/image/ab67616d0000b273296f2c128c45f439d61ced32",
+      "url": "https://open.spotify.com/track/5swBXhkDFezfrkVyeHuoo0"
+    }
+  ]
+}
