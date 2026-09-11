@@ -2,6 +2,14 @@ import Link from "next/link";
 import ProjectImageSlot from "@/components/ProjectImageSlot";
 import type { Project } from "@/data/projects";
 
+function sectionId(title: string) {
+  return title
+    .toLowerCase()
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
 export default function ProjectPage({ project }: { project: Project }) {
   return (
     <main className="project-page page-width" id="main-content" tabIndex={-1}>
@@ -23,44 +31,63 @@ export default function ProjectPage({ project }: { project: Project }) {
           </div>
         )}
 
-        <section className="project-section" aria-labelledby="contribution-heading">
+        <section
+          className="project-section"
+          id="my-part"
+          data-scroll-section
+          aria-labelledby="contribution-heading"
+        >
           <h2 id="contribution-heading">My part</h2>
           <p>{project.contribution}</p>
         </section>
 
-        {project.sections.map((section) => (
-          <section className="project-section" key={section.title}>
-            <h2>{section.title}</h2>
-            {section.paragraphs?.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-            {section.bullets && (
-              <ul>
-                {section.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}
-              </ul>
-            )}
+        {project.sections.map((section) => {
+          const id = sectionId(section.title);
 
-            {section.image && (
-              <div className="project-section-image">
-                <ProjectImageSlot image={section.image} label={`${section.title} image`} />
-              </div>
-            )}
+          return (
+            <section
+              className="project-section"
+              id={id}
+              data-scroll-section
+              key={section.title}
+            >
+              <h2>{section.title}</h2>
+              {section.paragraphs?.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+              {section.bullets && (
+                <ul>
+                  {section.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}
+                </ul>
+              )}
 
-            {section.images && section.images.length > 0 && (
-              <div className="project-image-grid">
-                {section.images.map((image) => (
-                  <ProjectImageSlot
-                    image={image}
-                    gallery
-                    label={`${section.title} image`}
-                    key={image.src}
-                  />
-                ))}
-              </div>
-            )}
-          </section>
-        ))}
+              {section.image && (
+                <div className="project-section-image">
+                  <ProjectImageSlot image={section.image} label={`${section.title} image`} />
+                </div>
+              )}
+
+              {section.images && section.images.length > 0 && (
+                <div className="project-image-grid">
+                  {section.images.map((image) => (
+                    <ProjectImageSlot
+                      image={image}
+                      gallery
+                      label={`${section.title} image`}
+                      key={image.src}
+                    />
+                  ))}
+                </div>
+              )}
+            </section>
+          );
+        })}
 
         {project.presentation && (
-          <section className="project-section project-presentation" aria-labelledby="presentation-heading">
+          <section
+            className="project-section project-presentation"
+            id="presentation"
+            data-scroll-section
+            aria-labelledby="presentation-heading"
+          >
             <h2 id="presentation-heading">Presentation</h2>
             {project.presentation.description && <p>{project.presentation.description}</p>}
             <div className="presentation-frame">

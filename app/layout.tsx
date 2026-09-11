@@ -3,6 +3,7 @@ import "./globals.css";
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ScrollHashSync from "@/components/ScrollHashSync";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://liuetha.github.io"),
@@ -33,6 +34,7 @@ export default function RootLayout({
           Skip to content
         </a>
         <Navbar />
+        <ScrollHashSync />
         {children}
         <Footer />
       </body>

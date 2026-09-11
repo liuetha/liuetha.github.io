@@ -36,7 +36,7 @@ const learningList: LearningPiece[] = [
 
 export default function Music() {
   return (
-    <section className="music" id="music" aria-labelledby="music-heading">
+    <section className="music" id="music" data-scroll-section aria-labelledby="music-heading">
       <div className="music-intro-block">
         <h2 className="section-heading" id="music-heading">Music</h2>
         <div className="music-story">

@@ -12,7 +12,7 @@ export default function Home() {
         </h1>
       </section>
 
-      <section className="work" id="work" aria-labelledby="work-heading">
+      <section className="work" id="work" data-scroll-section aria-labelledby="work-heading">
         <h2 className="section-heading" id="work-heading">Selected work</h2>
         <ul className="project-list">
           {projects.map((project) => (
@@ -23,7 +23,7 @@ export default function Home() {
         </ul>
       </section>
 
-      <section className="about" id="about" aria-labelledby="about-heading">
+      <section className="about" id="about" data-scroll-section aria-labelledby="about-heading">
         <h2 className="section-heading" id="about-heading">A bit about me</h2>
         <div className="about-copy">
           <p>
