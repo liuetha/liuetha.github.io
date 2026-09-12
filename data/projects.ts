@@ -265,9 +265,7 @@ export const projects: Project[] = [
       {
         title: "Analytical checks",
         paragraphs: [
-          "I performed stress analysis on the test stand plate in ANSYS Mechanical and identified the support orientation as a key source of high loading. By modifying the support orientation and validating the revised design through FEA, I increased the factor of safety from 0.89 to 2.49. ",
-          "For the combustion chamber, I verified that the existing wall design could meet a factor of safety of 2 under the expected internal pressure. I used analytical stress calculations and physics-based modelling to determine the minimum required wall thickness and compare it against the current geometry."
-          "For the static test stand, I checked the fasteners under the expected loading to confirm they also met a factor of safety of 2. This involved calculating the resulting bolt stresses and comparing them against allowable material limits to make sure the joint would remain within the required structural margin."
+          "I performed stress analysis on the test stand plate in ANSYS Mechanical and identified the support orientation as a key source of high loading. By modifying the support orientation and validating the revised design through FEA, I increased the factor of safety from 0.89 to 2.49.",
         ],
       },
     ],

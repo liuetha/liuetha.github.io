@@ -69,3 +69,7 @@ The workflow checks once per day and updates `public/data/top-tracks.json` only 
 ## Note on “past month”
 
 Spotify does not expose an exact calendar-month play-count leaderboard through this endpoint. `short_term` is an affinity ranking calculated over approximately the last four weeks, so the website labels it “Top tracks · past 4 weeks.”
+
+## Automatic updates
+
+`.github/workflows/update-spotify.yml` runs once per day and can also be run manually from the Actions tab. It uses the existing `SPOTIFY_CLIENT_ID`, `SPOTIFY_CLIENT_SECRET`, and `SPOTIFY_REFRESH_TOKEN` repository secrets, runs `npm run spotify:update`, and commits `public/data/top-tracks.json` only when the top four tracks have changed. After a change is committed, it dispatches the existing Pages deployment workflow so the public site refreshes automatically.
