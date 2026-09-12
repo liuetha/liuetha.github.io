@@ -74,10 +74,35 @@ export const projects: Project[] = [
         ],
       },
       {
+        title: "Model validation",
+        paragraphs: [
+          "I validated the particle model against measured copper deposition patterns for three nozzle geometries: converging-barrel slit, converging-diverging slit, and converging-diverging round. The comparisons use simulated particle-impact locations and probability distributions alongside experimental deposition footprints, surface profiles, and cross-sections to check whether the model reproduces the shape and spread of the deposited material.",
+        ],
+        images: [
+          {
+            src: "/images/projects/aerosol-validation-cb-slit.png",
+            alt: "Validation comparison for the copper converging-barrel slit nozzle showing simulated particle scatter and KDE beside the measured deposition footprint and three-dimensional profile",
+            caption: "CB-slit validation: simulated particle scatter and KDE compared with the measured 10 s copper deposition footprint and 3D surface profile.",
+            fit: "contain",
+          },
+          {
+            src: "/images/projects/aerosol-validation-cd-slit.png",
+            alt: "Validation comparison for the copper converging-diverging slit nozzle showing simulated particle locations and KDE beside the measured deposition footprint and cross-section",
+            caption: "CD-slit validation: predicted particle distribution compared with the measured 10 s copper footprint and deposition cross-section.",
+            fit: "contain",
+          },
+          {
+            src: "/images/projects/aerosol-validation-cd-round.png",
+            alt: "Validation comparison for the copper converging-diverging round nozzle showing simulated particle scatter and KDE beside the measured circular deposition footprint",
+            caption: "CD-round validation: simulated particle scatter and KDE compared with the measured 10 s copper deposition footprint.",
+            fit: "contain",
+          },
+        ],
+      },
+      {
         title: "Fixing the injection",
         paragraphs: [
           "Results from past literature had unrealistically uniform particle deposition patterns. I traced this behaviour to the injection setup and introduced particle spread to better represent the trajectories and impact locations.",
-          "For particle drag, I implemented Singh et al.’s correlation as a Fluent user-defined function and cross-checked it against independent implementations.",
         ],
         images: [
           {
@@ -93,6 +118,19 @@ export const projects: Project[] = [
             fit: "contain",
           },
         ],
+      },
+      {
+        title: "Drag model comparison",
+        paragraphs: [
+          "I implemented Singh et al.’s particle-drag correlation as a Fluent user-defined function and compared its predicted particle behaviour with established Loth and Crowe drag models. In the validation case used for this work, the Singh-based model produced 7.6% error, compared with 12.1–15.8% error reported for the established drag models.",
+          "The comparison below shows how the predicted particle-impact distributions change with the drag formulation, with the Singh model producing a tighter distribution than the Loth and Crowe cases.",
+        ],
+        image: {
+          src: "/images/projects/aerosol-drag-model-comparison.png",
+          alt: "Side-by-side comparison of particle impact locations predicted with Loth, Crowe, and Singh drag models",
+          caption: "Particle-impact distributions for Loth, Crowe, and Singh drag formulations. The Singh-based model used in this work produced 7.6% error in the validation case, compared with 12.1–15.8% reported for the established models.",
+          fit: "contain",
+        },
       },
       {
         title: "Automating the study",

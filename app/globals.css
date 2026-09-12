@@ -436,3 +436,16 @@ main:focus { outline: none; }
     text-align: left;
   }
 }
+
+/* Aerosol-deposition validation figures -------------------------------- */
+#model-validation .project-image-grid {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.25rem;
+}
+
+#model-validation .project-image-gallery-item img,
+#drag-model-comparison .project-section-image .project-image-slot img {
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+}
